@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">PlacesDemo</string>AIzaSyC7BVkdpoldwYaAQWZrQG0mqaMzLhkA1BY
     <string name="PLACES_API_KEY">AIzaSyC7BVkdpoldwYaAQWZrQG0mqaMzLhkA1BY</string>
+    <string name="title_activity_maps">Map</string>
+    <integer name="DB_VERSION">1</integer>
 </resources>

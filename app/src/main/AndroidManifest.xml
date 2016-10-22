@@ -16,9 +16,17 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="info.minhaz.placesdemo.MapsActivity" android:label="@string/title_activity_maps"></activity>
+
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/PLACES_API_KEY"/>
+        <provider
+            android:name=".model.AppContentProvider"
+            android:authorities="info.minhaz.placesdemo.model.AppContentProvider"
+            android:enabled="true"
+            android:exported="false" />
     </application>
 
 </manifest>
