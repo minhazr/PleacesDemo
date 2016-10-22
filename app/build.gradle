@@ -30,4 +30,5 @@ dependencies {
     compile 'com.google.android.gms:play-services-places:9.6.1'
     compile 'com.google.android.gms:play-services-maps:9.6.1'
     compile 'com.android.support:recyclerview-v7:24.2.1'
+    compile 'com.github.rey5137:material:1.2.4'
 }
