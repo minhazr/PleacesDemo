@@ -11,7 +11,7 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 
-import static info.minhaz.placesdemo.model.SqlDbHelper.AppColumns;
+import static info.minhaz.placesdemo.model.AppObject.Columns;
 
 import java.util.HashMap;
 
@@ -85,7 +85,7 @@ public class AppContentProvider extends ContentProvider {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         switch (uriMatcher.match(uri)) {
             case SHARED_DATA:
-                rowId = db.insert(SqlDbHelper.APP_TABLE, AppColumns.PHONE, values);
+                rowId = db.insert(SqlDbHelper.APP_TABLE, Columns.PHONE, values);
                 if (rowId > 0) {
                     wordUri = ContentUris.withAppendedId(AppTable.CONTENT_URI, rowId);
                 }
@@ -114,7 +114,7 @@ public class AppContentProvider extends ContentProvider {
                 break;
             case SHARED_DATA_ID:
                 wordId = uri.getPathSegments().get(1);
-                count = db.delete(SqlDbHelper.APP_TABLE, AppColumns._ID + "=" + wordId
+                count = db.delete(SqlDbHelper.APP_TABLE, Columns._ID + "=" + wordId
                         + (!TextUtils.isEmpty(selection) ? " AND (" + selection + ')' : ""), selectionArgs);
 
             default:
@@ -137,7 +137,7 @@ public class AppContentProvider extends ContentProvider {
                 break;
             case SHARED_DATA_ID:
                 String wordId = uri.getPathSegments().get(1);
-                count = db.update(SqlDbHelper.APP_TABLE, values, AppColumns._ID + "=" + wordId
+                count = db.update(SqlDbHelper.APP_TABLE, values, Columns._ID + "=" + wordId
                         + (!TextUtils.isEmpty(selection) ? " AND (" + selection + ')' : ""), selectionArgs);
                 break;
 
@@ -160,13 +160,13 @@ public class AppContentProvider extends ContentProvider {
         uriMatcher.addURI(AUTHORITY, SqlDbHelper.APP_TABLE + "/#", SHARED_DATA_ID);
 
         sSharedDataProjectionMap = new HashMap<String, String>();
-        sSharedDataProjectionMap.put(AppColumns._ID, AppColumns._ID);
-        sSharedDataProjectionMap.put(AppColumns.PHONE, AppColumns.PHONE);
-        sSharedDataProjectionMap.put(AppColumns.SEND, AppColumns.SEND);
-        sSharedDataProjectionMap.put(AppColumns.RECEIVED, AppColumns.RECEIVED);
+        sSharedDataProjectionMap.put(AppObject.Columns._ID, Columns._ID);
+        sSharedDataProjectionMap.put(AppObject.Columns.PHONE, Columns.PHONE);
+        sSharedDataProjectionMap.put(AppObject.Columns.SEND, Columns.SEND);
+        sSharedDataProjectionMap.put(AppObject.Columns.RECEIVED, Columns.RECEIVED);
 
     }
-    public static final class AppTable implements AppColumns {
+    public static final class AppTable implements Columns {
         private static final String URL = "content://" + AUTHORITY + "/" + SqlDbHelper.APP_TABLE;
         public static final Uri CONTENT_URI = Uri.parse(URL);
 
