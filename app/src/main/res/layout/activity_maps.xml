@@ -1,8 +1,52 @@
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="info.minhaz.placesdemo.MapsActivity" />
+    android:layout_height="match_parent">
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="info.minhaz.placesdemo.MapsActivity" />
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blue_grey_300_transparent"
+        android:elevation="4dp" >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:id="@+id/textViewTitle"
+                android:text="Test title"
+                android:layout_alignParentLeft="true"
+                android:textColor="@android:color/white"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:textSize="14sp"
+                android:id="@+id/textViewDone"
+                android:text="@string/DONE"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textColor="@android:color/white"/>
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+</FrameLayout>

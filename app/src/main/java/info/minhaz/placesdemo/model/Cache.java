@@ -12,7 +12,7 @@ public class Cache {
 
     public static void insert(Context context, String phone, boolean send, String place){
         ContentValues values=new ContentValues();
-        values.put(AppObject.Columns.PHONE, place);
+        values.put(AppObject.Columns.PHONE, phone);
         if (send){
             values.put(AppObject.Columns.SEND, place);
         }else{
@@ -44,5 +44,9 @@ public class Cache {
         String where= AppObject.Columns.PHONE+"='"+phone+"'";
         return context.getContentResolver().update(AppContentProvider.AppTable.CONTENT_URI, values, where, null);
 
+    }
+    public static int delete(Context context, String phone){
+        String where= AppObject.Columns.PHONE+"='"+phone+"'";
+        return context.getContentResolver().delete(AppContentProvider.AppTable.CONTENT_URI,  where, null);
     }
 }

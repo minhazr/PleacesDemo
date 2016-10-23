@@ -164,6 +164,7 @@ public class AppContentProvider extends ContentProvider {
         sSharedDataProjectionMap.put(AppObject.Columns.PHONE, Columns.PHONE);
         sSharedDataProjectionMap.put(AppObject.Columns.SEND, Columns.SEND);
         sSharedDataProjectionMap.put(AppObject.Columns.RECEIVED, Columns.RECEIVED);
+        sSharedDataProjectionMap.put(Columns.TIME, Columns.TIME);
 
     }
     public static final class AppTable implements Columns {

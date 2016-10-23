@@ -3,4 +3,24 @@
     <string name="PLACES_API_KEY">AIzaSyC7BVkdpoldwYaAQWZrQG0mqaMzLhkA1BY</string>
     <string name="title_activity_maps">Map</string>
     <integer name="DB_VERSION">1</integer>
+    <string name="Location">Location</string>
+    <string name="Received">Received:</string>
+    <string name="Sent">Sent:</string>
+    <string name="VIEW">VIEW</string>
+    <string name="DELETE">DELETE</string>
+    <string name="second">second</string>
+    <string name="seconds">seconds</string>
+    <string name="minute">minute</string>
+    <string name="minutes">minutes</string>
+    <string name="hour">hour</string>
+    <string name="hours">hours</string>
+    <string name="SHARE">SHARE</string>
+    <string name="DONE">DONE</string>
+    <string name="empty">You have not sent or receive any location update</string>
+    <string name="permission_message">Read contact permission required to share location with your contacts.</string>
+    <string name="permission_not_granted">Permission not granted</string>
+    <string name="permission_granted">Permission granted</string>
+    <string name="phone_required">Phone number required</string>
+    <string name="filter_title">View location</string>
+    <string name="send_to">Send to</string>
 </resources>

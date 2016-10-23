@@ -5,6 +5,8 @@ import android.provider.BaseColumns;
 
 import com.google.android.gms.location.places.Place;
 
+import org.json.JSONObject;
+
 /**
  * Created by mc7101 on 10/21/2016.
  */
@@ -16,13 +18,14 @@ public class AppObject {
     private long time;
 
 
-    AppObject(){
+    public AppObject(){
         super();
     }
-    AppObject(Cursor cursor){
+    public AppObject(Cursor cursor){
         phone = cursor.getString(cursor.getColumnIndex(Columns.PHONE));
         receivedPlace=cursor.getString(cursor.getColumnIndex(Columns.RECEIVED));
         sendPlace=cursor.getString(cursor.getColumnIndex(Columns.SEND));
+        time=cursor.getLong(cursor.getColumnIndex(Columns.TIME));
     }
 
     public String getPhone() {
@@ -62,4 +65,5 @@ public class AppObject {
         String RECEIVED="received";
         String TIME="time";
     }
+
 }
