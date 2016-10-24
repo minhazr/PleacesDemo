@@ -2,24 +2,25 @@ package info.minhaz.placesdemo;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.support.v7.widget.RecyclerView;
 import android.telephony.PhoneNumberUtils;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.json.JSONObject;
-
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Locale;
 
 import info.minhaz.placesdemo.model.AppObject;
-import info.minhaz.placesdemo.model.Cache;
 import info.minhaz.placesdemo.model.Place;
+import info.minhaz.placesdemo.model.StorageService;
 
 
 public class RecyclerAdapter extends CursorRecyclerViewAdapter<RecycleViewHolder> implements RecycleViewHolder.ItemClick{
     private Context context;
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd, MMMM yyyy ");
     public RecyclerAdapter(Context context, Cursor cursor){
         super(context, cursor);
         this.context=context;
@@ -78,7 +79,11 @@ public class RecyclerAdapter extends CursorRecyclerViewAdapter<RecycleViewHolder
                 else{
                     viewHolder.time.setText(diff+" "+context.getString(R.string.seconds));
                 }
+            }else if (diff<1000 ){
+                viewHolder.time.setText("1 "+context.getString(R.string.second));
             }
+        }else{
+            viewHolder.time.setText(dateFormat.format(appObject.getTime()));
         }
 
 
@@ -94,7 +99,8 @@ public class RecyclerAdapter extends CursorRecyclerViewAdapter<RecycleViewHolder
     @Override
     public void linkClick(int position, boolean sent) {
         Cursor cursor=getCursor();
-        if (cursor==null || cursor.getCount()==0) return;
+        if (cursor==null ) return;
+        int currentPosition=cursor.getPosition();
         if (cursor.moveToPosition(position)){
             AppObject appObject=new AppObject(cursor);
             if (sent){
@@ -114,17 +120,11 @@ public class RecyclerAdapter extends CursorRecyclerViewAdapter<RecycleViewHolder
 
                 }
             }
-
+            cursor.moveToPosition(currentPosition);
         }
+
+
+
     }
 
-    @Override
-    public void deleteClick(int position) {
-        Cursor cursor=getCursor();
-        if (cursor==null || cursor.getCount()==0) return;
-        if (cursor.moveToPosition(position)){
-            Cache.delete(context, cursor.getString(cursor.getColumnIndex(AppObject.Columns.PHONE)));
-            notifyDataSetChanged();
-        }
-    }
 }

@@ -17,7 +17,6 @@ public class  RecycleViewHolder extends RecyclerView.ViewHolder implements View.
     TextView send;
     TextView receive;
     TextView time;
-    Button buttonDelete;
     LinearLayout sentLayout;
     LinearLayout receivedLayout;
     private ItemClick mListener;
@@ -31,8 +30,7 @@ public class  RecycleViewHolder extends RecyclerView.ViewHolder implements View.
         time=(TextView) view.findViewById(R.id.textViewTime);
         receive=(TextView) view.findViewById(R.id.textViewLocationReceived);
         receive.setOnClickListener(this);
-        buttonDelete=(Button)view.findViewById(R.id.buttonDelete);
-        buttonDelete.setOnClickListener(this);
+
         sentLayout=(LinearLayout)view.findViewById(R.id.linearLayoutLocationSent);
         receivedLayout=(LinearLayout)view.findViewById(R.id.linearLayoutLocationReceived);
     }
@@ -41,9 +39,6 @@ public class  RecycleViewHolder extends RecyclerView.ViewHolder implements View.
     public void onClick(View view) {
         int id=view.getId();
         switch (id){
-            case R.id.buttonDelete:
-                mListener.deleteClick(getAdapterPosition());
-                break;
             case R.id.textViewLocationSent:
                 mListener.linkClick(getAdapterPosition(), true);
                 break;
@@ -57,6 +52,5 @@ public class  RecycleViewHolder extends RecyclerView.ViewHolder implements View.
 
     public interface ItemClick{
         void linkClick(int position, boolean sent);
-        void deleteClick(int position);
     }
 }

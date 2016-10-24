@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
+    android:layout_marginBottom="@dimen/list_item_standard_margin"
     android:clickable="true"
     android:orientation="vertical">
     <LinearLayout
@@ -89,21 +90,14 @@
             android:layout_marginRight="@dimen/list_item_standard_margin"
             android:orientation="horizontal">
             <TextView
-                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
+                android:layout_centerVertical="true"
                 android:textColor="#90A4AE"
                 android:id="@+id/textViewTime"/>
-            <com.rey.material.widget.Button
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:id="@+id/buttonDelete"
-                android:background="@null"
-                android:text="@string/DELETE"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:textColor="@color/colorPrimaryDark"/>
+
         </RelativeLayout>
     </LinearLayout>
 

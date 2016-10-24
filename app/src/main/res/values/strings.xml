@@ -15,6 +15,7 @@
     <string name="hour">hour</string>
     <string name="hours">hours</string>
     <string name="SHARE">SHARE</string>
+    <string name="START">START</string>
     <string name="DONE">DONE</string>
     <string name="empty">You have not sent or receive any location update</string>
     <string name="permission_message">Read contact permission required to share location with your contacts.</string>
@@ -23,4 +24,13 @@
     <string name="phone_required">Phone number required</string>
     <string name="filter_title">View location</string>
     <string name="send_to">Send to</string>
+    <string name="Select_location"> Select and share</string>
+    <string name="Share">3. Share</string>
+    <string name="Cancel">Cancel</string>
+    <string name="Phone">Phone</string>
+    <string name="None">None</string>
+    <string name="SELECT">SELECT</string>
+    <string name="Invalid_Entry">Invalid Entry</string>
+    <string name="missing">One or many required fields are missing.</string>
+    <string name="devcie_missing">Device phone number missing. Try on a different device</string>
 </resources>
