@@ -28,9 +28,7 @@ import static info.minhaz.placesdemo.model.AppObject.Columns;
 
 import java.util.HashMap;
 
-/**
- * Created by minhaz on 5/28/15.
- */
+
 public class AppContentProvider extends ContentProvider {
     private static final String TAG=AppContentProvider.class.getSimpleName();
     public static final String AUTHORITY = AppContentProvider.class.getCanonicalName();
