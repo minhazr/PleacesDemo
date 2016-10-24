@@ -5,7 +5,7 @@ android {
     buildToolsVersion "24.0.0"
     defaultConfig {
         applicationId "info.minhaz.placesdemo"
-        minSdkVersion 15
+        minSdkVersion 14
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
@@ -31,4 +31,7 @@ dependencies {
     compile 'com.google.android.gms:play-services-maps:9.6.1'
     compile 'com.android.support:recyclerview-v7:24.2.1'
     compile 'com.github.rey5137:material:1.2.4'
+    compile 'com.android.support:design:24.2.1'
+    compile "com.mikepenz:iconics-core:2.8.1@aar"
+    compile 'com.mikepenz:fontawesome-typeface:4.6.0.3@aar'
 }
