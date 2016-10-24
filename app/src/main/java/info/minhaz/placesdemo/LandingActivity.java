@@ -1,5 +1,17 @@
 package info.minhaz.placesdemo;
 
+/*
+ * ----------------------------------------------------------------------------
+ * "THE BEER-WARE LICENSE" (Revision 42):
+ * <minhaz@minhaz.info> wrote this file.  As long as you retain this notice you
+ * can do whatever you want with this stuff. If we meet some day, and you think
+ * this stuff is worth it, you can buy me a beer in return.   Minhaz Rafi Chowdhury
+ *
+ * You may obtain a copy of the License at
+ *
+ * https://fedoraproject.org/wiki/Licensing/Beerware
+ * ----------------------------------------------------------------------------
+ */
 import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
