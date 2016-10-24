@@ -22,7 +22,7 @@
     <string name="permission_not_granted">Permission not granted</string>
     <string name="permission_granted">Permission granted</string>
     <string name="phone_required">Phone number required</string>
-    <string name="filter_title">View location</string>
+    <string name="filter_title">PlacesDemo</string>
     <string name="send_to">Send to</string>
     <string name="Select_location"> Select and share</string>
     <string name="Share">3. Share</string>

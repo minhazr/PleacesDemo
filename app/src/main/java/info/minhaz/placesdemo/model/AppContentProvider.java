@@ -1,5 +1,18 @@
 package info.minhaz.placesdemo.model;
 
+/*
+ * ----------------------------------------------------------------------------
+ * "THE BEER-WARE LICENSE" (Revision 42):
+ * <minhaz@minhaz.info> wrote this file.  As long as you retain this notice you
+ * can do whatever you want with this stuff. If we meet some day, and you think
+ * this stuff is worth it, you can buy me a beer in return.   Minhaz Rafi Chowdhury
+ *
+ * You may obtain a copy of the License at
+ *
+ * https://fedoraproject.org/wiki/Licensing/Beerware
+ * ----------------------------------------------------------------------------
+ */
+
 import android.content.ContentProvider;
 import android.content.ContentUris;
 import android.content.ContentValues;
@@ -15,9 +28,7 @@ import static info.minhaz.placesdemo.model.AppObject.Columns;
 
 import java.util.HashMap;
 
-/**
- * Created by minhaz on 5/28/15.
- */
+
 public class AppContentProvider extends ContentProvider {
     private static final String TAG=AppContentProvider.class.getSimpleName();
     public static final String AUTHORITY = AppContentProvider.class.getCanonicalName();
